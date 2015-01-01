@@ -1,3 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Vast+Shadow);
+
 body {
-	background-color: pink;
+	background-color: FFCC66;
+	font-family: "helvetica";
+	margin: 0;
 }
+
+header {
+	height: 10%;
+	width: 100%;
+	padding: 2%;
+	background-color: black;
+	color: linen;
+	margin-top: 0px;
+	text-align: center;
+}
+
+header h2 {
+	height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 45px;
+	line-height: 30px;
+	font-family: 'Arial Black', 'helvetica';
+	font-family: 'Vast Shadow' !important;
+	font-style: normal;
+	font-weight: 400;
+}
+
+#feed {
+	background-color: linen;
+	margin: 3% auto;
+	color: #4C4C5A;
+	padding: 2%;
+	border-radius: 4px;
+	width: 80%;
+}
+
