@@ -25,10 +25,11 @@ google.load("jquery", "1.4.2");
 
     document.addEventListener("DOMContentLoaded", function(event) { 
       google.setOnLoadCallback(initialize);
+      console.log("Js loaded");
     });
 
  
-// Not sure why the "$" yields a undifined here.
+// Not sure why the "$" yields a undefined here.
 //  $(document).ready(function() {
 //  google.setOnLoadCallback(initialize);
 //  });
