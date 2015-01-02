@@ -27,9 +27,9 @@ google.load("jquery", "1.4.2");
       google.setOnLoadCallback(initialize);
     });
 
-/* 
-Not sure why the "$" yields a undifined here.
- $(document).ready(function() {
- google.setOnLoadCallback(initialize);
- });
- */
+ 
+// Not sure why the "$" yields a undifined here.
+//  $(document).ready(function() {
+//  google.setOnLoadCallback(initialize);
+//  });
+ 
