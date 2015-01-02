@@ -3,41 +3,20 @@
     <link href='http://fonts.googleapis.com/css?family=Vast+Shadow' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
 
-    google.load("feeds", "1");
-    google.load("jquery", "1.4.2");
-
-    /* 
-    Use this idea to see if can retrieve more items from feed:
-
-    google.load("feeds", "1",{"callback" : pageLoaded});
-    */
-
-    function initialize() {
-      var feed = new google.feeds.Feed("http://feeds2.feedburner.com/tedtalks_video/");
-      feed.load(function(result) {
-        if (!result.error) {
-          var container = document.getElementById("feed");
-          for (var i = 0; i < result.feed.entries.length; i++) {
-            var entry = result.feed.entries[i];
-            var div = document.createElement("div");
-            div.appendChild(document.createTextNode(entry.title));
-            container.appendChild(div);
-          }
-        }
-      });
-      
-    }
-    google.setOnLoadCallback(initialize);
-
-    </script>
+    
   </head>
   <body>
     <header>
   <h2>THE FEED</h2> 
   </header>
     <div id="feed"></div>
+
+    <footer>
+      <h5>Sourced from <a href="http://feeds.feedburner.com/tedtalks_video" target="_blank">TEDTalks(video)</a>.</h5>
+    </footer>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -4,10 +4,11 @@ body {
 	background-color: FFCC66;
 	font-family: "helvetica";
 	margin: 0;
+	height: 100%;
 }
 
 header {
-	height: 10%;
+	height: 6%;
 	width: 100%;
 	padding: 2%;
 	background-color: black;
@@ -26,6 +27,7 @@ header h2 {
 	font-family: 'Vast Shadow' !important;
 	font-style: normal;
 	font-weight: 400;
+	vertical-align: middle;
 }
 
 #feed {
@@ -37,3 +39,30 @@ header h2 {
 	width: 80%;
 }
 
+#details {
+	background-color: linen;
+	margin: 3% auto;
+	color: #4C4C5A;
+	padding: 2%;
+	border-radius: 4px;
+	width: 80%;
+}
+
+footer {
+	height: 5%;
+	width: 100%;
+	padding: 2%;
+	background-color: black;
+	color: linen;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+footer h5 {
+	font-family: 'Arial Black';
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+footer.a {
+	color: rgb(75 22 137);
