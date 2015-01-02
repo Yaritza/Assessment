@@ -47,7 +47,7 @@ header h2 {
 	vertical-align: middle;
 }
 
-#details {
+.details {
 	background-color: linen;
 	margin: 3% auto;
 	color: #4C4C5A;
