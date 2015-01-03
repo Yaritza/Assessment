@@ -48,6 +48,10 @@ header h2 {
 }
 
 .details {
+	display: none;
+}
+
+.details-show {
 	background-color: linen;
 	margin: 3% auto;
 	color: #4C4C5A;

@@ -5,32 +5,41 @@ google.load("feeds", "1");
 
 function initialize() {
   var feed = new google.feeds.Feed("http://feeds2.feedburner.com/tedtalks_video/");
-  /* Fix this to yield total count of entries on the Ted site. Use for setNumEntries(num) 
-  var num = feed.entries.length;
-  */
- 
-  feed.setNumEntries(20);
-  feed.load(function(result) {
-    if (!result.error) {
-      // var container = document.getElementById("feed");
-      var container = $('#feed');
-      for (var i = 0; i < result.feed.entries.length; i++) {
-        var entry = result.feed.entries[i];
-        // building out the html for the feed titles and repective cotent details
-        var entryDiv = '<div class = "entry">' + '<div class="title">' + 
-         entry.title + '<div class="details">' + entry.content + '</div> </div>'
+/* Fix this to yield total count of entries on the Ted site. Use for setNumEntries(num) 
+var num = feed.entries.length;
+*/
 
-        container.append(entryDiv)
+feed.setNumEntries(20);
+feed.load(function(result) {
+  if (!result.error) {
+  // var container = document.getElementById("feed");
+  var container = $('#feed');
+  for (var i = 0; i < result.feed.entries.length; i++) {
+    var entry = result.feed.entries[i];
+    // building out the html for the feed titles and repective cotent details
+    var entryDiv = '<div class = "entry">' + '<div class="title">' + 
+    entry.title + '<div class="details">' + entry.content + '</div> </div>'
+    container.append(entryDiv);
       }
     }
   });
 };
 
-  document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("Js is loading"); 
-    google.setOnLoadCallback(initialize);
-    //detailedView(); 
-  });
+$('#feed').on('click', '.entry .title', function(){
+  //alert('u clicked me');
+  $(this).find('.details').removeClass('details').addClass('details-show');
+})
+
+$('#feed').on('click', '.entry .details-show', function(){
+  alert('u clicked me');
+  $(this).find('.details-show').removeClass('details-show').addClass('details');
+});
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  // console.log("Js is loading"); 
+  google.setOnLoadCallback(initialize);
+});
+
 
 
 
