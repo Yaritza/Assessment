@@ -9,8 +9,9 @@ function initialize() {
 var num = feed.entries.length;
 */
 
-feed.setNumEntries(20);
+feed.setNumEntries(20000);
 feed.load(function(result) {
+  // debugger
   if (!result.error) {
   // var container = document.getElementById("feed");
   var container = $('#feed');
@@ -30,9 +31,10 @@ $('#feed').on('click', '.entry .title', function(){
   $(this).find('.details').removeClass('details').addClass('details-show');
 })
 
-$('#feed').on('click', '.entry .details-show', function(){
-  alert('u clicked me');
-  $(this).find('.details-show').removeClass('details-show').addClass('details');
+$('#feed').on('click', '.entry .details-show', function(event){
+  //.stopPropagation will keep click event from bubbling up back to feed;
+  event.stopPropagation();
+  $(this).removeClass('details-show').addClass('details');
 });
 
 document.addEventListener("DOMContentLoaded", function(event) {
