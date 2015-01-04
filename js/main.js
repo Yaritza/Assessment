@@ -18,26 +18,33 @@ feed.load(function(result) {
     var entry = result.feed.entries[i];
     // building out the html for the feed titles and repective cotent details
     var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class=title>' +
-    entry.title + '<div class="hide">' + entry.content + '<a class="openInTed" href=' + entry.link + ' target=_blank>'+  '&#10095;' +'</a></div></li></ul></div>';
+    entry.title + '<div class="hide">' + entry.content + '</div>' +'<li class="arrow hide"><a class="openInTed" href=' + entry.link + ' target=_blank>'+ '&#10095;' +'</a></li></ul></div>';
     container.append(entryDiv);
       }
     }
   });
 };
-$('#feed').on('click', '.entry .title', function(){
-  //alert('u clicked me');
+
+// shows listing description
+$('#feed').on('click', '.entry', function(){
+  alert('u clicked entry');
   $(this).find('.hide').removeClass('hide').addClass('show');
+  // $(this).find('.arrow .hide').removeClass('hide').addClass('show');
 })
 
-$('#feed').on('click', '.entry .show', function(event){
-  //.stopPropagation will keep click event from bubbling up back to feed;
-  event.stopPropagation();
-  $(this).removeClass('show').addClass('hide');
-});
+// FIx hide function!!!!!!!******
+
+// $('#feed').on('click', '.entry .listing', function(event){
+//   //.stopPropagation will keep click event from bubbling up back to feed;
+//   event.stopPropagation();
+//   // $(this).find('.show').removeClass('show').addClass('hide');
+//    $(this).find('.arrow.show').removeClass('show').addClass('hide');
+//     alert("you are in the hide function");
+//     debugger;
+// });
 
 
 // Not sure why the "$" yields a undefined here.
  $(document).ready(function() {
  google.setOnLoadCallback(initialize);
-console.log("Js loaded");
  });
