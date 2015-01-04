@@ -108,3 +108,9 @@ a:link {
 a:hover {
     text-decoration: underline;
 }
+.show .openInTed {
+	color: white;
+	background-color: black;
+	border-radius: 25px;
+	padding: 1% 2%;
+}
