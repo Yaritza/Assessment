@@ -1,17 +1,25 @@
 <html>
 <head>
+  <meta charset="UTF-8">
+<meta name="description" content="UI for TedTalk Feed">
+<meta name="keywords" content="HTML,CSS,JavaScript">
+<meta name="author" content="Yaritza Rodriguez">
+<title>The Feed</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
   <link href='http://fonts.googleapis.com/css?family=Vast+Shadow' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
   <div class="wrapper">
     <header>
-      <h2>THE FEED</h2> 
+      <h2>*THE FEED*</h2> 
     </header>
     <div id="feed"></div>
   </div><!--End of wrapper-->
   <footer>
-    <h5>Sourced from <a href="http://feeds.feedburner.com/tedtalks_video" target="_blank">TEDTalks(video)</a>.</h5>
+    <h5>Food for thought sourced from <a href="http://feeds.feedburner.com/tedtalks_video" target="_blank">TEDTalks(video)</a>.</h5>
   </footer>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -22,11 +30,13 @@
 <!-- This is the structure I am building with Js string interpolation 
 
 <div class="entry">
-  <div class="title">
-    Title
-  </div>
-  <div class="details">
-    Details
-  </div>
+  <ul class="listing">
+    <li="title">Title 
+        <div class="details">
+          Details
+          <a  class='openInTed'></a>
+        </div>
+    </li>
+  </ul>
 </div> -->
 

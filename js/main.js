@@ -11,7 +11,6 @@ var num = feed.entries.length;
 
 feed.setNumEntries(70);
 feed.load(function(result) {
-  debugger
   if (!result.error) {
   // var container = document.getElementById("feed");
   var container = $('#feed');
@@ -19,13 +18,12 @@ feed.load(function(result) {
     var entry = result.feed.entries[i];
     // building out the html for the feed titles and repective cotent details
     var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class=title>' +
-    entry.title + '<div class="hide">' + entry.content + '</div></li></ul></div>'
+    entry.title + '<div class="hide">' + entry.content + '<a class="openInTed" href=' + entry.link + ' target=_blank>'+  '&#10095;' +'</a></div></li></ul></div>';
     container.append(entryDiv);
       }
     }
   });
 };
-
 $('#feed').on('click', '.entry .title', function(){
   //alert('u clicked me');
   $(this).find('.hide').removeClass('hide').addClass('show');
@@ -36,13 +34,6 @@ $('#feed').on('click', '.entry .show', function(event){
   event.stopPropagation();
   $(this).removeClass('show').addClass('hide');
 });
-
-// document.addEventListener("DOMContentLoaded", function(event) {
-//   // console.log("Js is loading"); 
-//   google.setOnLoadCallback(initialize);
-// });
-
-
 
 
 // Not sure why the "$" yields a undefined here.

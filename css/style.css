@@ -1,10 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Vast+Shadow);
 
 body {
-	background-color: FFCC66;
+	background-color: #eeeeee;
 	font-family: "helvetica";
 	margin: 0;
 	height: 100%;
+	position: relative;
 }
 .wrapper {
 min-height: 100%;
@@ -38,20 +39,34 @@ header h2 {
 }
 
 #feed {
-	background-color: linen;
-	margin: 3% auto;
+	background-color: none;
+	margin: 4% auto;
 	color: #4C4C5A;
 	padding: 2%;
+	padding-bottom: 4%;
 	border-radius: 4px;
 	width: 80%;
 	vertical-align: middle;
 }
 
-.details {
+.entry {
+border-radius: 4px;
+box-shadow: 3px 3px 3px #888888;
+border: black solid 2px;
+background: #fbfaf9;
+padding: 2%;
+width: 96%;
+}
+
+.hide {
 	display: none;
 }
 
-.details-show {
+.show .openInTed {
+	background-color: black;
+}
+
+.show {
 	background-color: linen;
 	margin: 3% auto;
 	color: #4C4C5A;
@@ -68,10 +83,13 @@ footer {
 	color: linen;
 	margin-bottom: 0px;
 	text-align: center;
+	/*position: fixed;
+	overflow: hidden;*/
+	
 }
 
 footer h5 {
-	font-family: 'Arial Black';
+	font-family: 'helvetica', 'Arial Black';
 	margin-top: 0px;
 	margin-bottom: 0px;
 	vertical-align: middle;
