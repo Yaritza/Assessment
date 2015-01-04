@@ -9,17 +9,17 @@ function initialize() {
 var num = feed.entries.length;
 */
 
-feed.setNumEntries(20000);
+feed.setNumEntries(70);
 feed.load(function(result) {
-  // debugger
+  debugger
   if (!result.error) {
   // var container = document.getElementById("feed");
   var container = $('#feed');
   for (var i = 0; i < result.feed.entries.length; i++) {
     var entry = result.feed.entries[i];
     // building out the html for the feed titles and repective cotent details
-    var entryDiv = '<div class = "entry">' + '<div class="title">' + 
-    entry.title + '<div class="details">' + entry.content + '</div> </div>'
+    var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class=title>' +
+    entry.title + '<div class="hide">' + entry.content + '</div></li></ul></div>'
     container.append(entryDiv);
       }
     }
@@ -28,25 +28,25 @@ feed.load(function(result) {
 
 $('#feed').on('click', '.entry .title', function(){
   //alert('u clicked me');
-  $(this).find('.details').removeClass('details').addClass('details-show');
+  $(this).find('.hide').removeClass('hide').addClass('show');
 })
 
-$('#feed').on('click', '.entry .details-show', function(event){
+$('#feed').on('click', '.entry .show', function(event){
   //.stopPropagation will keep click event from bubbling up back to feed;
   event.stopPropagation();
-  $(this).removeClass('details-show').addClass('details');
+  $(this).removeClass('show').addClass('hide');
 });
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  // console.log("Js is loading"); 
-  google.setOnLoadCallback(initialize);
-});
+// document.addEventListener("DOMContentLoaded", function(event) {
+//   // console.log("Js is loading"); 
+//   google.setOnLoadCallback(initialize);
+// });
 
 
 
 
 // Not sure why the "$" yields a undefined here.
-//  $(document).ready(function() {
-//  google.setOnLoadCallback(initialize);
-// console.log("Js loaded");
-//  });
+ $(document).ready(function() {
+ google.setOnLoadCallback(initialize);
+console.log("Js loaded");
+ });
