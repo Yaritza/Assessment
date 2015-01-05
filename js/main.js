@@ -9,7 +9,7 @@ function initialize() {
 var num = feed.entries.length;
 */
 
-feed.setNumEntries(70);
+feed.setNumEntries(100);
 feed.load(function(result) {
   if (!result.error) {
   // var container = document.getElementById("feed");
@@ -28,19 +28,20 @@ feed.load(function(result) {
 
 // shows listing description
 $('#feed').on('click', '.entry', function(){
-  // alert('u clicked .entry');
-  $(this).find('.hide').removeClass('hide').addClass('show');
-  // $(this).find('.arrow .hide').removeClass('hide').addClass('show');
-})
-
-// Hides description of talk and arrow directing to Ted.com
- $(this).find('.hide, .show').each(function(){
+  $(this).find('.hide, .show').each(function(){
    if($(this).hasClass('hide')){
      $(this).removeClass('hide').addClass('show');
    }else{
      $(this).removeClass('show').addClass('hide')
    }
  });
+  // // alert('u clicked .entry');
+  // $(this).find('.hide').removeClass('hide').addClass('show');
+  // // $(this).find('.arrow .hide').removeClass('hide').addClass('show');
+})
+
+// Hides description of talk and arrow directing to Ted.com
+ 
 
 
 // View on localhost so we can use the google hosted libraries in the script tags.
