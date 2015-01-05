@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
 @import url(http://fonts.googleapis.com/css?family=Vast+Shadow);
 
 body {
@@ -16,25 +17,34 @@ margin: 0 auto -3.7em;
 }
 
 header {
-	height: 5%;
+	height: 6%;
 	width: 100%;
 	padding: 2%;
-	background-color: black;
+	background-color: #142C44;
+	/*background-image: url('../img/one_bright_bulb.jpg');*/
 	color: linen;
 	margin-top: 0px;
 	text-align: center;
+	-webkit-box-shadow: 0px 5px 21px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 21px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 5px 21px -5px rgba(0,0,0,0.75);
 }
 
 header h2 {
-	height: 100%;
+	height:99%;
 	margin-top: 0;
 	margin-bottom: 0;
 	font-size: 45px;
 	line-height: 30px;
-	font-family: 'helvetica','Arial Black';
-	font-family: 'Vast Shadow' !important;
+	color: #e5ca9d;
+font-family: 'Nixie One', 'Times New Roman', Times, serif;
+font-size: 3.0em;
+font-weight: 400;
+
+/*	font-family: 'helvetica','Arial Black';
+	font-family: 'Nixie One', cursive, !important;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 400;*/
 	vertical-align: middle;
 }
 
@@ -51,7 +61,7 @@ header h2 {
 .entry {
 border-radius: 4px;
 box-shadow: 3px 3px 3px #888888;
-border: black solid 2px;
+border: grey solid 2px;
 background: #fbfaf9;
 padding: 1%;
 width: 96%;
@@ -105,7 +115,7 @@ footer {
 	height: 3%;
 	width: 100%;
 	padding: 2%;
-	background-color: black;
+	background-color: #142C44;
 	color: linen;
 	margin-bottom: 0px;
 	text-align: center;
