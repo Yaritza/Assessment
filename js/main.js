@@ -5,18 +5,14 @@ google.load("feeds", "1");
 
 function initialize() {
   var feed = new google.feeds.Feed("http://feeds2.feedburner.com/tedtalks_video/");
-/* Fix this to yield total count of entries on the Ted site. Use for setNumEntries(num) 
-var num = feed.entries.length;
-*/
+
 
 feed.setNumEntries(100);
 feed.load(function(result) {
   if (!result.error) {
-  // var container = document.getElementById("feed");
-  var container = $('#feed');
+    var container = $('#feed');
   for (var i = 0; i < result.feed.entries.length; i++) {
     var entry = result.feed.entries[i];
-    // debugger;
     // building out the html for the feed titles and respective cotent details
     var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class="title">' +
     entry.title + '<div class="hide">' + entry.content + '</div>' +'<li class="arrow hide"><a class="openInTed" href=' + entry.link + ' target=_blank>'+ '&#10095;' +'</a></li></ul></div>';
@@ -26,7 +22,7 @@ feed.load(function(result) {
   });
 };
 
-// shows listing description
+// Shows and hides listing descriptions. Why didn't I think of using .toggleClass??!! 
 $('#feed').on('click', '.entry', function(){
   $(this).find('.hide, .show').each(function(){
    if($(this).hasClass('hide')){
@@ -35,16 +31,10 @@ $('#feed').on('click', '.entry', function(){
      $(this).removeClass('show').addClass('hide')
    }
  });
-  // // alert('u clicked .entry');
-  // $(this).find('.hide').removeClass('hide').addClass('show');
-  // // $(this).find('.arrow .hide').removeClass('hide').addClass('show');
 })
-
-// Hides description of talk and arrow directing to Ted.com
  
 
-
-// View on localhost so we can use the google hosted libraries in the script tags.
+// View on localhost so google hosted libraries in the script tags can be rendered properly.
  $(document).ready(function() {
  google.setOnLoadCallback(initialize);
  });
