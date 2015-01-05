@@ -16,7 +16,8 @@ feed.load(function(result) {
   var container = $('#feed');
   for (var i = 0; i < result.feed.entries.length; i++) {
     var entry = result.feed.entries[i];
-    // building out the html for the feed titles and repective cotent details
+    // debugger;
+    // building out the html for the feed titles and respective cotent details
     var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class=title>' +
     entry.title + '<div class="hide">' + entry.content + '</div>' +'<li class="arrow hide"><a class="openInTed" href=' + entry.link + ' target=_blank>'+ '&#10095;' +'</a></li></ul></div>';
     container.append(entryDiv);
@@ -27,12 +28,12 @@ feed.load(function(result) {
 
 // shows listing description
 $('#feed').on('click', '.entry', function(){
-  alert('u clicked entry');
+  // alert('u clicked .entry');
   $(this).find('.hide').removeClass('hide').addClass('show');
   // $(this).find('.arrow .hide').removeClass('hide').addClass('show');
 })
 
-// FIx hide function!!!!!!!******
+// FIx hide function!!!!!!! It's triggering code form line 30th ******
 
 // $('#feed').on('click', '.entry .listing', function(event){
 //   //.stopPropagation will keep click event from bubbling up back to feed;
@@ -44,7 +45,7 @@ $('#feed').on('click', '.entry', function(){
 // });
 
 
-// Not sure why the "$" yields a undefined here.
+// View on localhost so we can use the google hosted libraries in the script tags.
  $(document).ready(function() {
  google.setOnLoadCallback(initialize);
  });

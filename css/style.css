@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Nixie+One);
-@import url(http://fonts.googleapis.com/css?family=Vast+Shadow);
 
 body {
 	background-color: #eeeeee;
@@ -21,7 +20,6 @@ header {
 	width: 100%;
 	padding: 2%;
 	background-color: #142C44;
-	/*background-image: url('../img/one_bright_bulb.jpg');*/
 	color: linen;
 	margin-top: 0px;
 	text-align: center;
