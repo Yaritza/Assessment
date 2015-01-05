@@ -18,7 +18,7 @@ feed.load(function(result) {
     var entry = result.feed.entries[i];
     // debugger;
     // building out the html for the feed titles and respective cotent details
-    var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class=title>' +
+    var entryDiv = '<div class = "entry">' + '<ul class="listing">' + '<li class="title">' +
     entry.title + '<div class="hide">' + entry.content + '</div>' +'<li class="arrow hide"><a class="openInTed" href=' + entry.link + ' target=_blank>'+ '&#10095;' +'</a></li></ul></div>';
     container.append(entryDiv);
       }
@@ -33,16 +33,14 @@ $('#feed').on('click', '.entry', function(){
   // $(this).find('.arrow .hide').removeClass('hide').addClass('show');
 })
 
-// FIx hide function!!!!!!! It's triggering code form line 30th ******
-
-// $('#feed').on('click', '.entry .listing', function(event){
-//   //.stopPropagation will keep click event from bubbling up back to feed;
-//   event.stopPropagation();
-//   // $(this).find('.show').removeClass('show').addClass('hide');
-//    $(this).find('.arrow.show').removeClass('show').addClass('hide');
-//     alert("you are in the hide function");
-//     debugger;
-// });
+// Hides description of talk and arrow directing to Ted.com
+ $(this).find('.hide, .show').each(function(){
+   if($(this).hasClass('hide')){
+     $(this).removeClass('hide').addClass('show');
+   }else{
+     $(this).removeClass('show').addClass('hide')
+   }
+ });
 
 
 // View on localhost so we can use the google hosted libraries in the script tags.
